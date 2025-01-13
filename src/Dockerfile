@@ -1,6 +1,7 @@
 FROM maven:3.8.4-openjdk-17-slim as build
 WORKDIR /app
-
+ADD src src
+ADD ../pom.xml .
 
 RUN mvn package -DskipTests=true
 
